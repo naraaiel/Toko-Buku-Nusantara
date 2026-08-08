@@ -38,7 +38,7 @@ void bacaDataBuku(void) {
 
 
 void simpanDataBuku(void) {
-    FILE *fp = fopen(FILE_BUKU, "w");  /* mode "w" otomatis membuat file baru jika belum ada */
+    FILE *fp = fopen(FILE_BUKU, "w");  
     if (fp == NULL) {
         printf("Error: Gagal membuka/membuat file %s untuk menyimpan data.\n", FILE_BUKU);
         return;
@@ -80,7 +80,7 @@ void inputDataBuku(void) {
 
     printf("Nama Buku  : ");
     fgets(bukuBaru.nama, sizeof(bukuBaru.nama), stdin);
-    bukuBaru.nama[strcspn(bukuBaru.nama, "\n")] = '\0'; /* hapus newline di akhir */
+    bukuBaru.nama[strcspn(bukuBaru.nama, "\n")] = '\0'; 
 
     printf("Jenis Buku : ");
     fgets(bukuBaru.jenis, sizeof(bukuBaru.jenis), stdin);
@@ -89,7 +89,7 @@ void inputDataBuku(void) {
     printf("Harga Buku : ");
     while (scanf("%lf", &bukuBaru.harga) != 1 || bukuBaru.harga < 0) {
         printf("Input tidak valid. Masukkan harga berupa angka (>= 0): ");
-        while ((c = getchar()) != '\n' && c != EOF) { } /* bersihkan buffer salah */
+        while ((c = getchar()) != '\n' && c != EOF) { } 
     }
 
     daftarBuku[jumlahBuku] = bukuBaru;
