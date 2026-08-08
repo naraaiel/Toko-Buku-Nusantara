@@ -60,31 +60,5 @@ void viewDataBuku(void) {
     }
 }
 
-/* ============================================================
- * main() - HANYA UNTUK TESTING MENU 3 SECARA MANDIRI.
- * Saat digabung dengan kode kelompok, fungsi main() ini dihapus
- * dan cukup panggil viewDataBuku() dari switch-case menu utama.
- * ============================================================ */
-int main(void) {
-    int pilihan;
 
-    bacaDataBuku();
 
-    do {
-        printf("\n===== TEST MENU 3 - VIEW DATA BUKU =====\n");
-        printf("3. Tampilkan Semua Data Buku\n");
-        printf("0. Keluar\n");
-        printf("Pilih menu: ");
-        scanf("%d", &pilihan);
-
-        if (pilihan == 3) {
-            viewDataBuku();
-        } else if (pilihan != 0) {
-            printf("\nPilihan tidak valid.\n");
-        }
-
-    } while (pilihan != 0);
-
-    printf("\nProgram selesai.\n");
-    return 0;
-}
